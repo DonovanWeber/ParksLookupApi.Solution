@@ -121,7 +121,7 @@ namespace ParksLookup.Controllers
     public async Task<IActionResult<Park>> GetRandom()
     {
 
-
+      
       int randomId = random.Next(1,5);
       var park = await _db.Parks.FindAsync(randomId);
       return park;
