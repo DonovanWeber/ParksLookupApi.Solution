@@ -113,6 +113,12 @@ namespace ParksLookup.Controllers
 
       return NoContent();
     }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult<Park>> GetRandom()
+    {
+      
+    }
     
     
 
