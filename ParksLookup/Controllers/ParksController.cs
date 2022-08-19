@@ -38,7 +38,7 @@ namespace ParksLookup.Controllers
       }        
       if( description != null)
       {
-        query = query.Where(e => e.Description == description)
+        query = query.Where(e => e.ParkDescription == description);
       }
       return await query.ToListAsync();
     }
@@ -117,15 +117,7 @@ namespace ParksLookup.Controllers
       return NoContent();
     }
 
-    [HttpGet("random")]
-    public async Task<IActionResult<Park>> GetRandom()
-    {
-
-      
-      int randomId = random.Next(1,5);
-      var park = await _db.Parks.FindAsync(randomId);
-      return park;
-    }
+   
     
     
     
