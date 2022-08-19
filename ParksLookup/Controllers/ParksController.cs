@@ -14,7 +14,7 @@ namespace ParksLookup.Controllers
   [ApiController]
   public class ParksController : ControllerBase
   {
-
+    
     private readonly ParksLookupContext _db;
 
     public ParksController(ParksLookupContext db)
@@ -23,7 +23,7 @@ namespace ParksLookup.Controllers
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Park>>> Get([FromQuery]string parkName, string stateName)
+    public async Task<ActionResult<IEnumerable<Park>>> Get([FromQuery]string parkName, string stateName, string description)
     {
       var query = _db.Parks.AsQueryable();
       
@@ -36,7 +36,10 @@ namespace ParksLookup.Controllers
       {
         query = query.Where(entry => entry.StateName == stateName);
       }        
-
+      if( description != null)
+      {
+        query = query.Where(e => e.Description == description)
+      }
       return await query.ToListAsync();
     }
 
@@ -114,14 +117,18 @@ namespace ParksLookup.Controllers
       return NoContent();
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("random")]
     public async Task<IActionResult<Park>> GetRandom()
     {
-      
+
+
+      int randomId = random.Next(1,5);
+      var park = await _db.Parks.FindAsync(randomId);
+      return park;
     }
     
     
-
+    
     private bool ParkExists(int id)
     {
       return _db.Parks.Any(e => e.ParkId == id);
