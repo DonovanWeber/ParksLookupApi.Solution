@@ -6,13 +6,12 @@ An API that functions as a searching archive for national parks  across the coun
 * No known bugs contact me at [donovanweber03@gmail.com](mailto:donovanweber03@gmail.com)
 
 ### 🛠 Built With
-* 
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
 * [ASP.NET Core MVC](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-3.1)
 * [MySQL]
-* [Entity Framework Core 2.2.6](https://docs.microsoft.com/en-us/ef/core/)
-* [Swagger - NSwag 13.3.0](https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-nswag?view=aspnetcore-3.1&tabs=visual-studio)
+* [Entity Framework Core ](https://docs.microsoft.com/en-us/ef/core/)
+* [Swagger](https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-nswag?view=aspnetcore-3.1&tabs=visual-studio)
 * [Postman](postman.com)
 
 <!-- ### 🔍 Preview -->
@@ -90,7 +89,7 @@ An API that functions as a searching archive for national parks  across the coun
   3) Change the server, port, and user id as necessary. Replace 'YourPassword' with relevant MySQL password (set at installation of MySQL).
 
   #### Database
-  1) Navigate to ParksLookupApi.Solution/ParksLookup directory using the MacOS Terminal or Windows Powershell (e.g. `cd Desktop/CParksLookupApi.Solution/ParksLookup`).
+  1) Navigate to ParksLookupApi.Solution/ParksLookup directory using the MacOS Terminal or Windows Powershell (e.g. `cd Desktop/ParksLookupApi.Solution/ParksLookup`).
   2) Run the command `dotnet ef database update` to generate the database through Entity Framework Core.
   3) (Optional) To update the database with any changes to the code, run the command `dotnet ef migrations add <MigrationsName>` which will use Entity Framework Core's code-first principle to generate a database update. After, run the previous command `dotnet ef database update` to update the database.
 
